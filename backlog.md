@@ -29,7 +29,7 @@
 - US5-3 As a sponsor or organizer, I want to send sponsorship request with agreed terms, benefits, and sponsorship type so that I can accept or reject sponsorship.
 
 ## EPIC 6: Match Scheduling and Scoring
-- US6-1 As an organizer, I want to choose customize the tournament formats as a graphh So that the platform automatically generates the appropriate match bracket or scorecard lobby upon registration close.
+- US6-1 As an organizer, I want to customize the tournament format as a graph So that the platform automatically generates the appropriate match bracket or scorecard lobby upon registration close.
 - US6-2 As an organizer or staff member, I want to manually reseed matchups or swap participants in the bracket before matches start So that I can accommodate schedule conflicts, fix unfair seeding, or handle last-minute substitutions.
 - US6-3 As an organizer or staff member, I want to assign times and venue locations to scheduled matches So that competitors know exactly where and when to compete.
 - US6-4 As an organizer, staff member, or a referee, I want to record match scores or FFA placement rankings So that the winning teams automatically advance to the next round or the final leaderboard is established.
