@@ -20,6 +20,8 @@ This document specifies the core end-to-end user journeys, role interactions, an
 
 ### Flow A: Organizer Tournament Lifecycle & Crowdfunding Staging
 
+<!--Probably can still sponsor after the crowdfunding stage-->
+
 ```
 [1. Draft Tournament] ──► [2. Crowdfunding Stage (Optional)] ──► [3. Registration Stage] ──► [4. Match Execution] ──► [5. Completion & Payout]
  - Rules & Formats         - Target Goal & Deadline               - Custom Form Active       - Seeding / Reseeding     - Placements Archived
@@ -101,6 +103,8 @@ This document specifies the core end-to-end user journeys, role interactions, an
 
 ### Flow C: Sponsor Discovery & Self-Serve Checkout
 
+<!--There's a sponsor profile--no need to upload brand logo and URL unless specified further-->
+
 ```
 [Browse Sponsor Directory / Public Page] ──► [Select Tier Package] ──► [Upload Brand Logo & URL] ──► [Complete Checkout]
                                                                                                             │
@@ -116,6 +120,8 @@ This document specifies the core end-to-end user journeys, role interactions, an
 ---
 
 ### Flow D: Tournament Progression & Match Day
+
+<!--May want organizers to have the ability to change the bracket graph after registration closes, and have them confirm the brackets later before the final brackets are published.-->
 
 ```
 [Registration Closes] ──► [Bracket Generated] ──► [Seeding / Adjustments] ──► [Schedule & Venue Assigned]
@@ -133,6 +139,8 @@ This document specifies the core end-to-end user journeys, role interactions, an
 ---
 
 ### Flow E: Financial Ledger, Settlement & Payouts
+
+<!--What is this? not reviewed yet-->
 
 ```
 [Incoming Payments (Fees + Pledges)] ──► [Platform Settlement Ledger] ──► [Event Status: COMPLETED]
