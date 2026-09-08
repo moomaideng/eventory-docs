@@ -61,9 +61,11 @@ sequenceDiagram
     end
 
     App->>Context: Initialize Default Role ('competitor')
-    Context-->>App: Navbar updates to Role Switcher Dropdown
-    User->>App: Clicks Dropdown -> Selects 'Organizer' or 'Sponsor'
+    Context-->>App: Navbar shows Active Role & Mode Switch Button
+    Note over User,App: Smart Homepage (/) renders Mode Hub with 3 Persona Cards
+    User->>App: Clicks "Organizer Mode" (from Hub or Navbar Dropdown)
     App->>Context: setRole('organizer')
+    App->>App: Safe Redirect -> router.push('/organizer')
     Context-->>App: Navigation links instantly adapt to Organizer Workspace
 ```
 
@@ -161,9 +163,9 @@ Below is the complete table of routes required for Sprint 1. Each route has a si
 
 | Route Path | Page Name | Persona / Access | Mapped User Story | Core Components & UI Features |
 | :--- | :--- | :--- | :--- | :--- |
-| `/` | **Landing / Home** | Public / All | - | Clean Hero title, Value proposition, Primary CTAs (`Explore Tournaments`, `Host Tournament`). |
+| `/` | **Landing & Mode Showcase** | Public / All | - | Pure Server Component: Marketing Landing Hero (`Explore Tournaments`, `Choose Your Mode`) + 3-Persona Mode Explainer Cards introducing Competitor, Organizer, and Sponsor roles. |
+| `/hub` | **Mode Selection Hub** | Authenticated | **US1-2** | Dedicated Persona Launcher: 3 interactive cards (`Competitor`, `Organizer`, `Sponsor`) to select active workspace mode and launch into dedicated portals. |
 | `/login` | **Authentication** | Public (Unauthed) | **US1-1** | Single-click "Sign in with Google" card + "Dev Quick Login" fallback button. |
-| `/onboarding` | **Handle Setup** | Authenticated | **US1-1** | First-login profile setup: Display Name & Avatar confirmation. |
 | `/tournaments` | **Tournament Explore** | All (Competitor focus) | **US2-1** | Search bar, Status filter pills (`Crowdfunding`, `Registration Open`, `Live`, `Completed`), Game tags, Tournament Cards with funding/roster progress bars. |
 | `/tournaments/[id]` | **Tournament Detail** | All | **US2-2** | Hero banner, Organizer identity, Funding progress bar (if crowdfunding), Tabbed content (Overview, Rules & Format, Participants/Teams, Sponsors), CTA button. |
 | `/lobbies/[code]` | **Team Lobby Room** | Competitor (Teams) | **US4-1, US4-2** | 6-character room code with copy link, Roster slot cards, Member question completion status indicator, Captain controls (Kick, Regenerate Code, Lock Roster). |
@@ -173,27 +175,3 @@ Below is the complete table of routes required for Sprint 1. Each route has a si
 | `/sponsor` | **Sponsor Dashboard** | Sponsor | **US1-2, US5-5** | Pledged tournaments overview, brand asset preview (Logo, Website redirect link), sponsorship tier tracker. |
 | `/settings` | **Profile & Settings** | Authenticated | **US1-2, US1-3** | Tabbed settings: 1) Personal Profile, 2) Organizer Profile (Club name, Bio, Logo), 3) Sponsor Profile (Company name, Website, Logo). |
 
----
-
-## 4. Team Work Breakdown (How to Divide the Work)
-
-To prevent merge conflicts, team members can be assigned by feature domain:
-
-```mermaid
-treeView-beta
-frontend/
-├── src/
-│   ├── (auth)/      ## Person A: Auth & Identity (Login, Onboarding, Settings)
-│   ├── tournaments/ ## Person B: Discovery & Details (Explore, Detail Tabs)
-│   ├── organizer/   ## Person C: Organizer Hub & Tournament Creation Wizard
-│   └── lobbies/     ## Person D: Team Lobbies & Questionnaire Join Flow
-```
-
----
-
-## 5. Peer Review Checklist for Teammates
-
-- [ ] Does the **3-Persona Context Switcher** (Competitor / Organizer / Sponsor) fit our platform vision?
-- [ ] Are the **4 core flows** (Auth, Discovery, Organizer Lifecycle, Team Lobby) clear and sufficient for Sprint 1?
-- [ ] Is the page routing structure logical and easy to navigate?
-- [ ] Are there any missing pages or duplicate responsibilities in the list above?
